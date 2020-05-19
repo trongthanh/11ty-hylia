@@ -1,43 +1,42 @@
 {
-  "name": "hylia",
-  "version": "0.7.0",
+  "name": "hylia-int3ractive",
+  "version": "1.0.0",
   "description": "A simple Eleventy starter kit to help you have a blog of your own",
-  "main": "index.js",
   "dependencies": {
-    "@11ty/eleventy": "^0.10.0",
+    "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-plugin-rss": "^1.0.7",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
     "@tbranyen/jsdom": "^13.0.0",
-    "concurrently": "^4.1.2",
+    "concurrently": "^5.2.0",
     "html-minifier": "^4.0.0",
     "image-size": "^0.8.3",
     "json-to-scss": "^1.5.0",
-    "sass": "^1.26.3",
-    "semver": "^6.3.0",
+    "sass": "^1.26.5",
+    "semver": "^7.3.2",
     "slugify": "^1.4.0",
     "stalfos": "github:hankchizljaw/stalfos#c8971d22726326cfc04089b2da4d51eeb1ebb0eb"
   },
   "devDependencies": {
-    "bl": "^3.0.0",
-    "cross-env": "^5.2.1",
+    "bl": "^4.0.2",
+    "cross-env": "^7.0.2",
     "make-dir-cli": "^2.0.0"
   },
   "scripts": {
-    "sass:tokens": "json-to-scss src/_data/tokens.json src/scss/_tokens.scss",
-    "sass:process": "npm run sass:tokens && sass src/scss/global.scss src/_includes/assets/css/global.css --style=compressed",
+    "sass:tokens": "json-to-scss _data/tokens.json _includes/scss/_tokens.scss",
+    "sass:process": "npm run sass:tokens && sass _includes/scss/global.scss _includes/assets/css/global.css --style=compressed",
     "start": "concurrently \"npm run sass:process -- --watch\" \"npm run serve\"",
     "serve": "cross-env ELEVENTY_ENV=development eleventy --serve",
     "build": "npm run sass:process && eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hankchizljaw/hylia.git"
+    "url": "git+https://github.com/trongthanh/11ty-hylia.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hankchizljaw/hylia/issues"
+    "url": "https://github.com/trongthanh/11ty-hylia/issues"
   },
-  "homepage": "https://github.com/hankchizljaw/hylia#readme"
+  "homepage": "https://github.com/trongthanh/11ty-hylia#readme"
 }

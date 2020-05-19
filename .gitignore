@@ -6,12 +6,14 @@ npm-debug.*
 .DS_Store
 .sass-cache
 node_modules
-dist 
 
 # Specifics
 
+# Hide generate site
+_site/
+
 # Hide design tokens
-src/scss/_tokens.scss
+_includes/scss/_tokens.scss
 
 # Hide compiled CSS
 src/_includes/assets/*
