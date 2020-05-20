@@ -1,10 +1,7 @@
 ---
 title: A post with code samples
 date: '2019-06-18'
-tags:
-  - demo-content
-  - code
-  - blog
+tags: [demo-content, code, blog, css]
 ---
 The best way to demo a code post is to display a real life post, so check out this one from [andy-bell.design](https://andy-bell.design/wrote/creating-a-full-bleed-css-utility/) about a full bleed CSS utility.
 
@@ -22,9 +19,9 @@ It’s small, but hella mighty:
 
 ```css
 .full-bleed {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
 }
 ```
 
@@ -49,7 +46,7 @@ The `.full-bleed` utility gives those elements prominence and _importantly_ keep
 }
 ```
 
-Having a container like `.wrapper` helps to create consistent, centred content.  
+Having a container like `.wrapper` helps to create consistent, centred content.
 
 - - -
 
@@ -62,3 +59,22 @@ Finally, we use CSS transforms to `translateX(-50%)`. Because the transform work
 ## Wrapping up
 
 Hopefully this short and sweet trick will help you out on your projects. If it does, [drop me a tweet](https://twitter.com/andybelldesign), because I’d love to see it!
+
+## Test JavaScript
+
+```js
+// 404
+config.setBrowserSyncConfig({
+	callbacks: {
+		ready: function(err, browserSync) {
+			const content_404 = fs.readFileSync('_site/404.html');
+
+			browserSync.addMiddleware('*', (req, res) => {
+				// Provides the 404 content without redirect.
+				res.write(content_404);
+				res.end();
+			});
+		},
+	},
+});
+```
