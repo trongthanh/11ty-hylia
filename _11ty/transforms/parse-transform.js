@@ -23,7 +23,12 @@ module.exports = function(value, outputPath) {
 				const file = image.getAttribute('src');
 
 				if (file.indexOf('http') < 0) {
-					const dimensions = getSize('./' + file);
+					let dimensions = { width: 20, height: 20 };
+					try {
+						dimensions = getSize('./' + file);
+					} catch (err) {
+						console.log(`image not found ${file}`);
+					}
 
 					image.setAttribute('width', dimensions.width);
 					image.setAttribute('height', dimensions.height);
